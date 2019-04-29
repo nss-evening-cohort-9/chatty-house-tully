@@ -5,7 +5,7 @@ import message from './components/messages';
 console.error('setup is working');
 
 const init = () => {
-  message.domStringBuilder();
+  message.getData();
 };
 
 init();

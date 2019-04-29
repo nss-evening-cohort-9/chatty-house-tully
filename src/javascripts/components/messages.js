@@ -1,5 +1,7 @@
-// import messagesData from './helpers/data/messageData';
+import messagesData from '../helpers/data/messageData';
 import util from '../helpers/util';
+
+let messages = [];
 
 
 const domStringBuilder = (messageArray) => {
@@ -18,5 +20,17 @@ const domStringBuilder = (messageArray) => {
   util.printToDom('messages', domString);
 };
 
+const getData = () => {
+  messagesData.getMessagesData()
+    .then((response) => {
+      const newMessageArray = response.data.messages;
+      messages = newMessageArray;
+      domStringBuilder(messages);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
 
-export default { domStringBuilder };
+
+export default { getData };
