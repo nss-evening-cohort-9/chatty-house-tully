@@ -12,14 +12,15 @@
   <h3>Chatty Tully</h3>
   <button class="btn btn-danger">Bootstap is dAnGeRoUs!</button>
   <div id="app">
-    <div id="nav">
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <img class="navbar-brand image" src="../assets/favicon.png">
-            <form class="form-inline">
-              <input class="form-control" id="messager" placeholder="message here..">
-              <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Clear</button>
-            </form>
-          </nav>
+    <div id="nav fixed-top">
+      <div class="form-group" id="users"></div>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand"><img class="image" src="../assets/favicon.png"></a>
+        <form class="form-inline">
+          <input class="form-control" type="text" id="messager" placeholder="message here..">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Clear</button>
+        </form>
+      </nav>
     </div>
     <div id="msg">
     </div>
