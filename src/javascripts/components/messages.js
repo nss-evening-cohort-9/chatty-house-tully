@@ -16,7 +16,35 @@ const domStringBuilder = (messageArray) => {
     domString += '</div>';
   });
   util.printToDom('messages', domString);
+  console.error(messages);
 };
+
+const makeMessage = (e) => {
+  e.preventDefault();
+  const inputValue = document.getElementById('messager').value;
+  if (e.key === 'Enter') {
+    const newMessage = {
+      user: 9,
+      id: 'Plies',
+      message: inputValue,
+      time: 'timeStamp',
+    };
+    messages.push(newMessage);
+    domStringBuilder(messages);
+    document.getElementById('messager').value = '';
+  }
+};
+
+const initEvent = () => {
+  const input = document.getElementById('messager');
+  input.addEventListener('keyup', makeMessage);
+};
+
+// determine if enter key has been pressed
+// get input value
+// put the input value in the array
+// use push or unshift
+// Print to the DOM
 
 const getData = () => {
   messagesData.getMessagesData()
@@ -31,4 +59,4 @@ const getData = () => {
 };
 
 
-export default { getData };
+export default { getData, makeMessage, initEvent };

@@ -8,6 +8,7 @@ console.error('setup is working');
 const init = () => {
   message.getData();
   users.userStringBuilder();
+  message.initEvent();
 };
 
 init();
