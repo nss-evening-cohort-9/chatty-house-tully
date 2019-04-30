@@ -1,4 +1,4 @@
-
+import util from '../helpers/util';
 
 const users = [
   { id: 'user1', name: 'Plies' },
@@ -8,11 +8,11 @@ const users = [
   { id: 'user5', name: 'Catelyn' },
 ];
 
-const domStringBuilder = () => {
+const userStringBuilder = () => {
   let domString = '';
   users.forEach((user) => {
-    domString += '<div class="form-check">';
-    domString += `<input class="form-check-input" type="checkbox" value="" id="${user.id}">`;
+    domString += '<div class="form-check form-check-inline">';
+    domString += `<input class="form-check-input" type="radio" name="user" value="" id="${user.id}">`;
     domString += `<label class="form-check-label" for="${user.id}">`;
     domString += `${user.name}`;
     domString += '</label>';
@@ -20,3 +20,5 @@ const domStringBuilder = () => {
   });
   util.printToDom('users', domString);
 };
+
+export default { userStringBuilder };
