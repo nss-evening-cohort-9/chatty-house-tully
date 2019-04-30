@@ -9,10 +9,24 @@
 </head>
 
 <body>
-  <h3>Chatty Tully</h3>
-  <button class="btn btn-danger">Bootstap is dAnGeRoUs!</button>
   <div id="app">
-    <div id="nav">
+    <div id="nav fixed-top">
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <div class="row">
+          <div class="col-1">
+            <a class="navbar-brand"><img class="image" src="../assets/favicon.png"></a>
+          </div>
+          <div class="col-9 offset-sm-2">
+            <div class="row">
+              <div class="form-group col-12" id="users"></div>
+              <form class="form-inline col-12 float-right">
+                <input class="form-control" type="text" id="messager" placeholder="message here..">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Clear</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
     <div id="msg">
     </div>
