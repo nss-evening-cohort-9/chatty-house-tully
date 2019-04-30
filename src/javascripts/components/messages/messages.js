@@ -20,18 +20,18 @@ const domStringBuilder = (messageArray) => {
 };
 
 const makeMessage = (e) => {
-  e.preventDefault();
   const inputValue = document.getElementById('textInput').value;
   if (e.key === 'Enter') {
     const newMessage = {
-      user: 9,
-      id: 'Plies',
+      user: 'Plies',
+      id: 6,
       message: inputValue,
-      time: 'timeStamp',
+      time: '2014-09-08T08:02:17-06:00',
     };
     messages.push(newMessage);
     domStringBuilder(messages);
     document.getElementById('textInput').value = '';
+    e.preventDefault();
   }
 };
 
