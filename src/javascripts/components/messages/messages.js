@@ -21,7 +21,7 @@ const domStringBuilder = (messageArray) => {
 
 const makeMessage = (e) => {
   e.preventDefault();
-  const inputValue = document.getElementById('messager').value;
+  const inputValue = document.getElementById('textInput').value;
   if (e.key === 'Enter') {
     const newMessage = {
       user: 9,
@@ -31,12 +31,12 @@ const makeMessage = (e) => {
     };
     messages.push(newMessage);
     domStringBuilder(messages);
-    document.getElementById('messager').value = '';
+    document.getElementById('textInput').value = '';
   }
 };
 
 const initEvent = () => {
-  const input = document.getElementById('messager');
+  const input = document.getElementById('textInput');
   input.addEventListener('keyup', makeMessage);
 };
 
