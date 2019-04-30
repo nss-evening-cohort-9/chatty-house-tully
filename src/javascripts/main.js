@@ -1,13 +1,13 @@
 import 'bootstrap';
 import '../styles/main.scss';
-import message from './components/messages';
+import message from './components/messages/messages';
 import users from './components/users';
-
-console.error('setup is working');
+import themes from './components/themes/themes';
 
 const init = () => {
   message.getData();
   users.userStringBuilder();
+  themes.listeners();
 };
 
 init();

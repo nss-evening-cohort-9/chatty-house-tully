@@ -1,0 +1,20 @@
+.dark {
+  background-color: #131349;
+  // background-color: #491313;
+  .navbar {
+    background-color: #444 !important;
+    color: whitesmoke;
+  }
+  .card {
+    // background-color: #131349;
+    background-color: #491313;
+    color: whitesmoke;
+  }
+}
+
+.light {
+  background-color: lightskyblue;
+  .card {
+    background-color: white;
+  }
+}
