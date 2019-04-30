@@ -35,9 +35,6 @@ const listeners = () => {
   $('#dark').click(() => {
     darkify();
   });
-  $('#custom').click(() => {
-    console.error('custom');
-  });
 };
 
 export default { listeners };
