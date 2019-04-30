@@ -19,6 +19,7 @@ const userStringBuilder = () => {
     domString += '</div>';
   });
   util.printToDom('users', domString);
+  document.getElementById('user1').checked = 'checked';
 };
 
 export default { userStringBuilder };
