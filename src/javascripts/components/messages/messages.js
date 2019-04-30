@@ -1,5 +1,6 @@
-import messagesData from '../helpers/data/messageData';
-import util from '../helpers/util';
+import messagesData from '../../helpers/data/messageData';
+import util from '../../helpers/util';
+import './messages.scss';
 
 let messages = [];
 
@@ -7,7 +8,7 @@ let messages = [];
 const domStringBuilder = (messageArray) => {
   let domString = '';
   messageArray.forEach((message) => {
-    domString += '<div class="card" style="width: 18rem;">';
+    domString += '<div class="card">';
     domString += '<div class="card-body">';
     domString += `<h5 class="card-title">${message.user}</h5>`;
     domString += `<p class="card-text">${message.message}</p>`;
@@ -15,7 +16,7 @@ const domStringBuilder = (messageArray) => {
     domString += '</div>';
     domString += '</div>';
   });
-  util.printToDom('messages', domString);
+  util.printToDom('msg', domString);
 };
 
 const getData = () => {
