@@ -9,6 +9,7 @@ const init = () => {
   custom.startup();
   message.getData();
   users.userStringBuilder();
+  message.initEvent();
   themes.listeners();
 };
 
