@@ -43,6 +43,7 @@ const makeMessage = (e) => {
 const initEvent = () => {
   const input = document.getElementById('textInput');
   input.addEventListener('keyup', makeMessage);
+  $( "#clear" ).click(clear())
 };
 
 // determine if enter key has been pressed
