@@ -1,6 +1,8 @@
+import $ from 'jquery';
 import messagesData from '../../helpers/data/messageData';
 import util from '../../helpers/util';
 import './messages.scss';
+
 
 let messages = [];
 
@@ -19,19 +21,22 @@ const domStringBuilder = (messageArray) => {
   util.printToDom('msg', domString);
 };
 
+let counter = 6;
+
 const makeMessage = (e) => {
   const inputValue = document.getElementById('textInput').value;
   if (e.key === 'Enter') {
+    const myName = $('input[name="user"]:checked').val();
     const newMessage = {
-      user: 'Plies',
-      id: 6,
+      user: myName,
+      id: counter,
       message: inputValue,
       time: '2014-09-08T08:02:17-06:00',
     };
     messages.push(newMessage);
     domStringBuilder(messages);
     document.getElementById('textInput').value = '';
-    e.preventDefault();
+    counter += 1;
   }
 };
 
