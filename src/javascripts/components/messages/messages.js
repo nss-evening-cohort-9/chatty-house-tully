@@ -19,6 +19,12 @@ const domStringBuilder = (messageArray) => {
   util.printToDom('msg', domString);
 };
 
+const messageLimit = () => {
+  if (messages.length > 3) {
+    messages.shift();
+  }
+};
+
 const makeMessage = (e) => {
   const inputValue = document.getElementById('textInput').value;
   if (e.key === 'Enter') {
@@ -29,9 +35,8 @@ const makeMessage = (e) => {
       time: '2014-09-08T08:02:17-06:00',
     };
     messages.push(newMessage);
+    messageLimit();
     domStringBuilder(messages);
-    document.getElementById('textInput').value = '';
-    e.preventDefault();
   }
 };
 
@@ -57,6 +62,5 @@ const getData = () => {
       console.error(error);
     });
 };
-
 
 export default { getData, makeMessage, initEvent };
