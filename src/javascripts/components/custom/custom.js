@@ -1,11 +1,9 @@
 import $ from 'jquery';
 
-let primarySelector;
-let secondarySelector;
 let primary;
 let secondary;
 
-function updateAll(event) {
+function updateColor(event) {
   if (event.target.id === 'primary') {
     primary = event.target.value;
   } else if (event.target.id === 'secondary') {
@@ -20,12 +18,8 @@ const submit = () => {
 };
 
 function startup() {
-  primarySelector = $('#primary');
-  primarySelector.change(updateAll);
-  primarySelector.select();
-  secondarySelector = $('#secondary');
-  secondarySelector.change(updateAll);
-  secondarySelector.select();
+  $('#primary').change(updateColor);
+  $('#secondary').change(updateColor);
   $('#submit').click(submit);
 }
 
