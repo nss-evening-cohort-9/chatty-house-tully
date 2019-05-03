@@ -5,7 +5,7 @@ import './messages.scss';
 
 
 let messages = [];
-
+const moment = require('moment');
 
 const domStringBuilder = (messageArray) => {
   let domString = '';
@@ -21,6 +21,11 @@ const domStringBuilder = (messageArray) => {
   util.printToDom('msg', domString);
 };
 
+const messageLimit = () => {
+  if (messages.length > 20) {
+    messages.shift();
+  }
+};
 let counter = 6;
 
 const makeMessage = (e) => {
@@ -31,9 +36,10 @@ const makeMessage = (e) => {
       user: myName,
       id: counter,
       message: inputValue,
-      time: '2014-09-08T08:02:17-06:00',
+      time: moment().format('MMMM Do YYYY, h:mm a'),
     };
     messages.push(newMessage);
+    messageLimit();
     domStringBuilder(messages);
     document.getElementById('textInput').value = '';
     counter += 1;
@@ -70,6 +76,5 @@ const getData = () => {
       console.error(error);
     });
 };
-
 
 export default { getData, makeMessage, initEvent };

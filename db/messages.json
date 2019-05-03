@@ -17,8 +17,8 @@
         "message": "How have you been?",
         "time": "2014-09-08T08:02:17-06:00",
         "user": "Tom"
-     },
-     {
+      },
+      {
         "id": 4,
         "message": "Doing great! Are things good with you?",
         "time": "2014-09-08T08:02:17-06:00",
@@ -29,6 +29,6 @@
         "message": "They are! Thanks for asking!",
         "time": "2014-09-08T08:02:17-06:00",
         "user": "Tom"
-     }
+      }
   ]
 }
