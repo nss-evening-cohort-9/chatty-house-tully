@@ -5,7 +5,7 @@ import './messages.scss';
 
 
 let messages = [];
-
+const moment = require('moment');
 
 const domStringBuilder = (messageArray) => {
   let domString = '';
@@ -36,19 +36,26 @@ const makeMessage = (e) => {
       user: myName,
       id: counter,
       message: inputValue,
-      time: '2014-09-08T08:02:17-06:00',
+      time: moment().format('MMMM Do YYYY, h:mm a'),
     };
     messages.push(newMessage);
     messageLimit();
     domStringBuilder(messages);
     document.getElementById('textInput').value = '';
     counter += 1;
+    $('#clear').removeAttr('disabled');
   }
 };
 
+const clearMessages = () => {
+  messages = [];
+  domStringBuilder(messages);
+  $('#clear').attr('disabled', 'true');
+};
+
 const initEvent = () => {
-  const input = document.getElementById('textInput');
-  input.addEventListener('keyup', makeMessage);
+  $('#textInput').keypress(makeMessage);
+  $('#clear').click(clearMessages);
 };
 
 // determine if enter key has been pressed
