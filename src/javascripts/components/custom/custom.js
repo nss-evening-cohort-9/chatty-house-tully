@@ -16,6 +16,7 @@ function updateAll(event) {
 const submit = () => {
   $('#customSheet').remove();
   $(`<style type="text/css" id="customSheet">.custom { background-color: ${primary} } .custom .card { background-color: ${secondary} }</style>`).appendTo('head');
+  $('#customThemeModal').modal('toggle');
 };
 
 function startup() {
