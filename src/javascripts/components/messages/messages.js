@@ -54,8 +54,7 @@ const clearMessages = () => {
 };
 
 const initEvent = () => {
-  const input = document.getElementById('textInput');
-  input.addEventListener('keyup', makeMessage);
+  $('#textInput').keypress(makeMessage);
   $('#clear').click(clearMessages);
 };
 
