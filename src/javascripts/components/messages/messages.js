@@ -37,13 +37,20 @@ const makeMessage = (e) => {
     domStringBuilder(messages);
     document.getElementById('textInput').value = '';
     counter += 1;
+    $('#clear').removeAttr('disabled');
   }
+};
+
+const clearMessages = () => {
+  messages = [];
+  domStringBuilder(messages);
+  $('#clear').attr('disabled', 'true');
 };
 
 const initEvent = () => {
   const input = document.getElementById('textInput');
   input.addEventListener('keyup', makeMessage);
-  $( "#clear" ).click(clear())
+  $('#clear').click(clearMessages);
 };
 
 // determine if enter key has been pressed
