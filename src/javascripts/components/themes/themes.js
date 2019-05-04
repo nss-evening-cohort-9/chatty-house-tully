@@ -17,6 +17,12 @@ const lightify = () => {
 };
 
 const listeners = () => {
+  const largeTextBtn = $('#large');
+  if (largeTextBtn.attr('checked')) {
+    // add class
+  } else {
+    // remove class
+  }
   $('#light').click(lightify);
   $('#dark').click(darkify);
   $('#submit').click(customify);
