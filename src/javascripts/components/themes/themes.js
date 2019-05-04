@@ -16,16 +16,15 @@ const lightify = () => {
   $('body').addClass('light');
 };
 
+const largeText = () => {
+  $('#msg').toggleClass('large');
+};
+
 const listeners = () => {
-  const largeTextBtn = $('#large');
-  if (largeTextBtn.attr('checked')) {
-    // add class
-  } else {
-    // remove class
-  }
   $('#light').click(lightify);
   $('#dark').click(darkify);
   $('#submit').click(customify);
+  $('#large').click(largeText);
 };
 
 export default { listeners };

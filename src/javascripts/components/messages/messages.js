@@ -14,7 +14,7 @@ const domStringBuilder = (messageArray) => {
     domString += '<div class="card-body">';
     domString += `<h5 class="card-title">${message.user}</h5>`;
     domString += `<p class="card-text">${message.message}</p>`;
-    domString += `<class="card-link">${message.time}</a>`;
+    domString += `<p class="timestamp">${message.time}</p>`;
     domString += '</div>';
     domString += '</div>';
   });
