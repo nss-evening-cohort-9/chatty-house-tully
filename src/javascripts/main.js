@@ -7,7 +7,6 @@ import themes from './components/themes/themes';
 const init = () => {
   message.getData();
   users.userStringBuilder();
-  message.initEvent();
   themes.listeners();
 };
 
