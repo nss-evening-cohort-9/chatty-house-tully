@@ -1,10 +1,12 @@
 .dark {
   background-color: #131349;
+
   // background-color: #491313;
   .navbar {
     background-color: #444 !important;
     color: whitesmoke;
   }
+
   .card {
     // background-color: #131349;
     background-color: #491313;
@@ -14,7 +16,23 @@
 
 .light {
   background-color: lightskyblue;
+
   .card {
     background-color: white;
   }
+}
+
+.large {
+  .card-body {
+    font-size: 1.75em;
+    .card-title {
+      font-size: 1.25em;
+    }
+    .card-text {
+      font-size: 1em;
+    }
+    .timestamp {
+      font-size: 0.75em;
+    }
+  } 
 }

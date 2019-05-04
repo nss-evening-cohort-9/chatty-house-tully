@@ -10,7 +10,53 @@
 
 <body class="light">
   <div id="app">
-    <div id="nav" class="fixed-top"> 
+      <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Error Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Oops!! You are not allowed to delete other user's messages!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="customThemeModal" tabindex="-1" role="dialog" aria-labelledby="customThemeModalTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Custom Theme Selector</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="x-button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <input type="color" id="primary" name="primary" value="#ffffff">
+              <label for="primary">Primary Color</label>
+            </div>
+            <div>
+              <input type="color" id="secondary" name="secondary" value="#ffffff">
+              <label for="secondary">Secondary Color</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel">Cancel</button>
+            <button type="button" class="btn btn-primary" id="submit">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nav" class="fixed-top">
       <nav class="navbar navbar-light bg-light justify-content-between">
         <div class="row">
           <div class="col-1">
@@ -24,8 +70,14 @@
               <div class="btn-group col-12" role="group" aria-label="Themes">
                 <button type="button" class="btn btn-outline-secondary" id="light">Light Theme</button>
                 <button type="button" class="btn btn-outline-secondary" id="dark">Dark Theme</button>
-                <button type="button" class="btn btn-outline-secondary" id="custom">Custom Theme</button>
+                <button type="button" class="btn btn-outline-secondary" id="custom" data-toggle="modal"
+                  data-target="#customThemeModal">Custom Theme</button>
               </div>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" class="checkbox" id="large" aria-label="Checkbox for following text input">Large Text</div>
+                    </div>
             </div>
           </div>
         </div>

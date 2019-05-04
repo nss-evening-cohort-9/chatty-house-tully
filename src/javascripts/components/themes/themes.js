@@ -1,40 +1,30 @@
 import $ from 'jquery';
 import './themes.scss';
 
-// const lightify = () => {
-
-// };
+const customify = () => {
+  $('body').removeClass();
+  $('body').addClass('custom');
+};
 
 const darkify = () => {
-  if ($('body').hasClass('light')) {
-    $('body').removeClass('light');
-  }
-  if ($('body').hasClass('custom')) {
-    $('body').removeClass('custom');
-  }
-
+  $('body').removeClass();
   $('body').addClass('dark');
 };
 
 const lightify = () => {
-  if ($('body').hasClass('dark')) {
-    $('body').removeClass('dark');
-  }
-  if ($('body').hasClass('custom')) {
-    $('body').removeClass('custom');
-  }
-
+  $('body').removeClass();
   $('body').addClass('light');
 };
 
+const largeText = () => {
+  $('#msg').toggleClass('large');
+};
 
 const listeners = () => {
-  $('#light').click(() => {
-    lightify();
-  });
-  $('#dark').click(() => {
-    darkify();
-  });
+  $('#light').click(lightify);
+  $('#dark').click(darkify);
+  $('#submit').click(customify);
+  $('#large').click(largeText);
 };
 
 export default { listeners };

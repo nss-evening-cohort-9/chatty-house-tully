@@ -9,14 +9,16 @@ let messages = [];
 const moment = require('moment');
 
 const deleteMessage = (e) => {
-  console.error(`deleteMessage called on ${e.target.id}`);
   const buttonId = e.target.id;
   messages.forEach((message, index) => {
     if (buttonId === message.id.toString()) {
-      messages.splice(index, 1);
+      if ($('input[name="user"]:checked').val() === message.user) {
+        messages.splice(index, 1);
+      } else {
+        $('#deleteModal').modal();
+      }
     }
   });
-  console.error(messages);
 };
 
 
@@ -27,8 +29,8 @@ const domStringBuilder = (messageArray) => {
     domString += '<div class="card-body">';
     domString += `<h5 class="card-title">${message.user}</h5>`;
     domString += `<p class="card-text">${message.message}</p>`;
-    domString += `<class="card-link">${message.time}</a>`;
-    domString += `<button type="button" class="btn btn-primary deleteButton" id="${message.id}">Delete Message</button>`;
+    domString += `<button type="button" class="btn btn-outline-danger deleteButton float-right" id="${message.id}">Delete</button>`;
+    domString += `<p class="timestamp">${message.time}</p>`;
     domString += '</div>';
     domString += '</div>';
   });
