@@ -3,7 +3,9 @@ Welcome to Chatty-House-Tully chat app!
 
 ## Images
 Inline-style:
-![alt text](./assets/Screen Shot 2019-05-13 at 3.11.23 PM.png)
+![alt text](assets/currentstyling.png)
+![alt text](assets/customcolor.png)
+![alt text](assets/largetext.png)
 
 ## Technologies Used 
 
