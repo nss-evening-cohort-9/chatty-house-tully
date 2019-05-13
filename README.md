@@ -3,7 +3,7 @@ Welcome to Chatty-House-Tully chat app!
 
 ## Images
 Inline-style:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](./assets/Screen Shot 2019-05-13 at 3.11.23 PM.png)
 
 ## Technologies Used 
 
